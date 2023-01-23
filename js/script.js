@@ -5,6 +5,51 @@ function suma(suma1, suma2){
     return suma1 + suma2
 }
 
+class productos {
+    constructor(id, producto, precio, precioIVA){
+        this.id = id,
+        this.producto = producto,
+        this.precio = precio,
+        this.precioIVA = precioIVA
+    }
+}
+
+const productos1= new productos(1,"Arroz",200, 242)
+
+const productos2 = new productos(2,"Atun",700, 847)
+
+const productos3 = new productos(3,"fideos", 500, 605)
+
+const productos4= new productos(4,"papa", 150, 181)
+
+
+const estanteria = [productos1, productos2, productos3, productos4]
+
+
+function verHistorial(array){
+    console.log("Bienvenido! su historial es:")
+    array.forEach((productos)=>{
+        console.log(productos.id, productos.producto, productos.precio, productos.precioIVA)
+    })
+}
+
+
+function calculoIva() {
+    let = productosCIVA = [estanteria];
+    do {
+        this.Producto = prompt("Ingrese el nombre del producto:");
+        this.Precio = parseFloat(prompt("Ingrese el precio del producto:"));
+        while(isNaN(this.Precio)){
+            this.Precio = parseInt(prompt("ATENCION TIPO DE DATO INCORRECTO, Ingrese el valor del producto"))
+         }
+        let IVA = this.Precio * 1.21;
+        const ProductoNuevo = new productos(estanteria.length+1, this.Producto, this.Precio, IVA)
+        estanteria.push(ProductoNuevo) 
+        var continuar = prompt("¿Desea calcular el IVA de otro producto? (si/no)").toLowerCase();
+    } while (continuar === 'si');
+    console.log(productosCIVA)
+}
+
 
 let salirMenu = false
 do{
@@ -20,6 +65,7 @@ do{
        3 - Calcular impuestos (ARS)
        4 - Calcular impuestos + impuesto Qatar (ARS)
        5 - Calcular IVA
+       6 - Ver historial (IVA)
        0 - Salir del menu`))
     switch(opciones){
         case 1:
@@ -77,22 +123,10 @@ do{
             } while (continuar === 'si');
         break
         case 5:
-            function calculoIva() {
-                this.productosCIVA = [];
-                do {
-                    this.Producto = prompt("Ingrese el nombre del producto:");
-                    this.Precio = parseFloat(prompt("Ingrese el precio del producto:"));
-                    while(isNaN(this.Precio)){
-                        this.Precio = parseInt(prompt("ATENCION TIPO DE DATO INCORRECTO, Ingrese el valor del producto"))
-                     }
-                    let IVA = this.Precio * 1.21;
-                    this.productosCIVA.push({Producto: this.Producto, Precio: this.Precio, IVA: IVA});
-                    var continuar = prompt("¿Desea calcular el IVA de otro producto? (si/no)").toLowerCase();
-                } while (continuar === 'si');
-            }
-            const CalculoIva = new calculoIva();
-            console.log(CalculoIva.productosCIVA);
-
+            calculoIva() 
+        break
+        case 6:
+            verHistorial(estanteria)
         break
         case 0:
             alert("gracias por utilizar nuestra app")
@@ -104,20 +138,6 @@ do{
     }
 }while(!salirMenu)
 
-
-// function calculoIva() {
-//     do {
-//         this.Producto = prompt("Ingrese el nombre del producto:");
-//         this.Precio = parseFloat(prompt("Ingrese el precio del producto:"));
-//         while(isNaN(this.Precio)){
-//             this.Precio = parseInt(prompt("ATENCION TIPO DE DATO INCORRECTO, Ingrese el valor del producto"))
-//          }
-//         let IVA = this.Precio * 1.21;
-//         alert("Producto: " + this.Producto + " | Precio: " + this.Precio + " | IVA: " + IVA);
-//         var continuar = prompt("¿Desea calcular el IVA de otro producto? (si/no)").toLowerCase();
-//     } while (continuar === 'si');
-// }
-// let CalculoIva = new calculoIva();
 
 
 
