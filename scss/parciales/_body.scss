@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+
+  .form-main{
+    padding: 30px;
+    background-color: #8AA6A3;
+    border: 3px solid #127369;
+  }
+
+
+  .form-signin{
+    width: 350px;
+  }
+  
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+  
+  .form-signin input[type="email"] {
+    margin-bottom: 10px;
+
+  }
+  
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+
+  }
+  
