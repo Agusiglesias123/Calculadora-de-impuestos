@@ -10,7 +10,7 @@
     
 </head>
     <body class="text-center d-flex justify-content-center">
-        <main class="form-signin ">
+        <main class="form-signin w-auto">
             <form class="form-main ">
                 <ul class="nav nav-tabs d-flex tab-style" id="myTab" role="tablist">
                   <li class="nav-item" role="presentation">
@@ -33,42 +33,42 @@
                         <h6 class="mb-3" >Ingresa un monto para calcular los impuestos</h6>
                         <div class="input-group mb-3">
                           <button class="btn btn-outline-secondary" type="button">USD</button>
-                          <input type="text" class="form-control" placeholder="" aria-label="Example text with two button addons">
+                          <input id="calculador" type="text" class="form-control" placeholder="" aria-label="Example text with two button addons">
                           <button class="btn btn-outline-secondary" type="button">ARS</button>
                         </div>
-               
                         <div class="d-flex justify-content-between mt-3">
-                            <p>Cotización dólar oficial</p>
-                            <strong><p>$186</p></strong>
+                          <p>Cotización dólar oficial</p>
+                          <strong><p id="inputDolarOficial" >$186</p></strong>
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between">
-                            <p>Sin impuestos</p>
-                            <strong><p>$0</p></strong>
+                          <p>Sin impuestos</p>
+                          <strong><p id="inputSinImpuestos" >$0</p></strong>
                         </div>
                         <div class="d-flex justify-content-between">
-                            <p>+ Imp. PAIS (30%)</p>
-                            <strong><p>$0</p></strong>
+                          <p>+ Imp. PAIS (30%)</p>
+                          <strong><p id="inputIMP-pais" >$0</p></strong>
                         </div>
                         <div class="d-flex justify-content-between">
-                            <p>+ Imp. ganancias (45%)</p>
-                            <strong><p>$0</p></strong>
-                        </div>
-                        <hr>
-                        <div class="d-flex justify-content-between">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                + Imp. Dólar Qatar (25%)
-                            </label>
-                            <strong><p>0</p></strong>
+                          <p>+ Imp. ganancias (45%)</p>
+                            <strong><p id="inputIMP-ganancia" >$0</p></strong>
                           </div>
-                        <hr>
-                        <div class="d-flex justify-content-evenly">
-                            <p>Total c/ imp.</p>
-                            <strong><p>$186</p></strong>
+                          <hr>
+                        <div class="d-flex justify-content-between">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <label class="form-check-label" for="flexCheckDefault">
+                            + Imp. Dólar Qatar (25%)
+                          </label>
+                          <strong><p id="inputQatar" >0</p></strong>
                         </div>
+                        <hr>
+                        <div class="d-flex justify-content-evenly mb-2 ">
+                          <p>Total c/ imp.</p>
+                          <strong><p>$186</p></strong>
+                        </div>
+                        <button class="btn btn-dark" type="button">Calcular</button>
+                      </div>
                     </div>
-                  </div>
                   <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                     <div class="content">
                       <div class="d-flex flex-column align-items-center ">
@@ -84,8 +84,8 @@
                           <input type="number" id="nombrePrecio" class="form-control" placeholder="Precio" aria-label="Precio">
                         </div>
                       </div>
-                      <div class="container">
-                        <button class="btn btn-dark" type="button">Calcular</button>
+                      <div class="container mt-2">
+                        <button type="button" id="btn-agregarProducto" class="btn btn-dark" type="button">Calcular</button>
                       </div>
                   </div>
                   </div>
@@ -94,16 +94,12 @@
                       <div class="d-flex flex-column align-items-center ">
                         <img class="mb-2" src="./media/FONDO NEGRO.png" alt="" width="70" height="57">
                         <h1 class="mb-3">BRAVE</h1>
-                        <h6 class="mb-3" >HISTORIAL (IVA)</h6>
-                    </div>
-                      <ul class="list-group list-group-horizontal" id="1">
-                        <li class="list-group-item">1</li>
-                        <li class="list-group-item">Atun</li>
-                        <li class="list-group-item">200</li>
-                        <li class="list-group-item">250</li>
-                      </ul>
-                    </div>
-                </div>
+                      </div>
+                      <div id="container">
+                        <button type="button" id="btn-historial" class="btn rrr mb-3" >VER HISTORIAL (IVA)</button>
+                      </div>
+                    <div class="container"  id="1-r">
+                  </div>
                 </div>
           </form>
         </main>        

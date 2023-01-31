@@ -113,6 +113,7 @@ function calcularImpuestoARSQatar(){
     } while (continuar === 'si');
 }
 
+
 function agregarProducto() {
     let productosCIVA = [estanteria];
     let continuar;
@@ -199,26 +200,72 @@ function ordenarHistorial(array) {
 //     }
 // }while(!salirMenu)`
 
-let historialProductos = document.getElementById("contact-tab-pane") 
+let historialProductos = document.getElementById("1-r") 
 
-for (let productos of estanteria){
-    let nuevoProducto = document.createElement("ul")
-    nuevoProducto.innerHTML = `
-    <ul class="list-group list-group-horizontal" id="${productos.id}">
-    <li class="list-group-item">${productos.id}</li>
-    <li class="list-group-item">${productos.producto}</li>
-    <li class="list-group-item">${productos.precio}</li>
-    <li class="list-group-item">${productos.precioIVA}</li>
-  </ul>
-    `
-    historialProductos.appendChild(nuevoProducto)
+
+let VERhistorialProductos = document.getElementById("btn-historial") 
+
+let historialdoble = document.getElementById("historial-btn")
+let inputProducto = document.getElementById("nombreProducto")
+let inputPrecio = document.getElementById("nombrePrecio")
+
+let botonAgregarIVA = document.getElementById("btn-agregarProducto")
+botonAgregarIVA.addEventListener("click", () => {cargarProducto(estanteria)})
+
+VERhistorialProductos.onclick = () =>{
+    verHistorial(estanteria)
+}
+
+historialProductos.onclick = () =>{
+    verHistorial(estanteria)
 }
 
 
 
-let botonAgregarIVA = document.getElementById("")
+function verHistorial(array){
+    historialProductos.innerHTML = ""
+    for (let productos of array){
+        let nuevoProducto = document.createElement("ul")
+        nuevoProducto.classList.add("my-2")
+        nuevoProducto.innerHTML = `
+        <ul class="list-group list-group-horizontal" id="${productos.id}">
+        <li class="list-group-item">${productos.id}</li>
+        <li class="list-group-item">${productos.producto}</li>
+        <li class="list-group-item">${productos.precio}</li>
+        <li class="list-group-item">${productos.precioIVA}</li>
+      </ul>
+        `
+        historialProductos.appendChild(nuevoProducto)
+    }
+}
 
 
-let inputProducto = document.getElementById("nombreProducto")
 
-let inputPrecio = document.getElementById("nombrePrecio")
+function cargarProducto(array) {
+    let inputProducto = document.getElementById("nombreProducto");
+    let inputPrecio = document.getElementById("nombrePrecio")
+    let IVA = inputPrecio.value * 1.21;
+    const ProductoNuevo = new productos(array.length+1, inputProducto.value, inputPrecio.value, IVA)
+    array.push(ProductoNuevo) 
+    verHistorial(array)
+    inputProducto.value = ""
+    inputPrecio.value = ""
+}
+calculador
+
+
+
+// let inputDolarOficial = document.getElementById("inputDolarOficial");
+// let inputSinImpuestos = document.getElementById("inputSinImpuestos");
+// let inputIMPpais = document.getElementById("inputIMP-pais");
+// let inputIMPganancia = document.getElementById("inputIMP-ganancia");
+// let inputQatar = document.getElementById("inputQatar");
+
+// function calcularImpuestoUSD(){
+//         let inputCalculo= document.getElementById("calculador");
+//         multi(inputDolarOficial.value, inputCalculo.value)
+//         let sImpuestos = multi(inputDolarOficial.value, inputCalculo.value);
+//         multi(sImpuestos, tax)
+//         let cImpuestos = multi(sImpuestos, tax);
+//         let totalCimp = suma(cImpuestos, sImpuestos);
+//         console.log("calcularImpuestoUSD")
