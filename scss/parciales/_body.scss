@@ -33,3 +33,27 @@ body {
 
   }
   
+
+  .tab-style {
+    flex-wrap: nowrap;
+    color: black;
+    background-color: #8AA6A3;
+    border: none;
+  }
+
+  .nav-tabs .nav-link.active, .nav-link{
+    background-color: #8AA6A3;
+    color: black;
+    border: none !important;
+  }
+
+  .nav-tabs:hover{
+    background-color: #8AA6A3;
+    color :#127369;
+  }
+  .nav-link:hover{
+    background-color: #8AA6A3;
+    color :#127369;
+    border: none;
+  }
+  
