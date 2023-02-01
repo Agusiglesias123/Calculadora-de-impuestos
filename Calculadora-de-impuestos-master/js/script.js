@@ -1,9 +1,9 @@
-let  impGanancias = 0.35
-let  impPais = 0.4
+let  impGanancias = 0.45
+let  impPais = 0.3
 let  impQatar = 0.25
 let tax = impGanancias + impPais
 let taxQatar = impGanancias + impPais + impQatar
-let valorDolar = 193
+let valorDolar = 195
 
 // funciones generales
 
@@ -200,17 +200,15 @@ function ordenarHistorial(array) {
 //     }
 // }while(!salirMenu)`
 
-let historialProductos = document.getElementById("1-r") 
-
-
+let historialProductos = document.getElementById("historial-btn") 
 let VERhistorialProductos = document.getElementById("btn-historial") 
-
 let historialdoble = document.getElementById("historial-btn")
 let inputProducto = document.getElementById("nombreProducto")
 let inputPrecio = document.getElementById("nombrePrecio")
-
 let botonAgregarIVA = document.getElementById("btn-agregarProducto")
 botonAgregarIVA.addEventListener("click", () => {cargarProducto(estanteria)})
+
+
 
 VERhistorialProductos.onclick = () =>{
     verHistorial(estanteria)
@@ -255,17 +253,49 @@ calculador
 
 
 
-// let inputDolarOficial = document.getElementById("inputDolarOficial");
-// let inputSinImpuestos = document.getElementById("inputSinImpuestos");
-// let inputIMPpais = document.getElementById("inputIMP-pais");
-// let inputIMPganancia = document.getElementById("inputIMP-ganancia");
-// let inputQatar = document.getElementById("inputQatar");
+let inputDolarOficial = document.getElementById("inputDolarOficial");
 
-// function calcularImpuestoUSD(){
-//         let inputCalculo= document.getElementById("calculador");
-//         multi(inputDolarOficial.value, inputCalculo.value)
-//         let sImpuestos = multi(inputDolarOficial.value, inputCalculo.value);
-//         multi(sImpuestos, tax)
-//         let cImpuestos = multi(sImpuestos, tax);
-//         let totalCimp = suma(cImpuestos, sImpuestos);
-//         console.log("calcularImpuestoUSD")
+let inputSinImpuestos = document.getElementById("inputSinImpuestos");
+
+let inputIMPpais = document.getElementById("inputIMP-pais");
+
+let inputIMPganancia = document.getElementById("inputIMP-ganancia");
+
+let inputQatar = document.getElementById("inputQatar");
+
+inputDolarOficial.innerHTML = `$${valorDolar}`
+
+let inputCalculo = document.getElementById("calculador");
+
+
+
+let btnTotal = document.getElementById("totalCimp")
+
+inputCalculo.addEventListener("input",function(){
+    multi(valorDolar, inputCalculo.value)
+    let sinImpuestos = multi(valorDolar, inputCalculo.value);
+    inputSinImpuestos.innerHTML = `$${sinImpuestos}`
+    multi(sinImpuestos, tax)
+    let conImpuestos = multi(sinImpuestos, tax);
+    let totalCimp = suma(conImpuestos, sinImpuestos);
+    let totalCimpp = totalCimp.toFixed()
+    btnTotal.innerHTML = `$${totalCimpp}`;
+    multi(sinImpuestos, impPais);
+    let cPaisImp = multi(sinImpuestos, impPais).toFixed();
+    inputIMPpais.innerHTML = `$${cPaisImp}`;
+    multi(sinImpuestos, impGanancias);
+    let cGananImp = multi(sinImpuestos, impGanancias).toFixed();
+    inputIMPganancia.innerHTML =`$${cGananImp}`
+})
+
+
+// let checkbox = document.getElementById("flexCheck")
+
+// checkbox.addEventListener("change", function(){
+//     if (checkbox.checked) {
+//         console.log("chekeado")
+//     } else {
+//         console.log("sss")
+//     }
+// })
+

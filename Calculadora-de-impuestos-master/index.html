@@ -12,7 +12,7 @@
     <body class="text-center d-flex justify-content-center">
         <main class="form-signin w-auto">
             <form class="form-main ">
-                <ul class="nav nav-tabs d-flex tab-style" id="myTab" role="tablist">
+                <ul class="nav nav-tabs d-flex tab-style justify-content-center " id="myTab" role="tablist">
                   <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">IMPUESTOS</button>
                   </li>
@@ -32,41 +32,38 @@
                         </div>
                         <h6 class="mb-3" >Ingresa un monto para calcular los impuestos</h6>
                         <div class="input-group mb-3">
-                          <button class="btn btn-outline-secondary" type="button">USD</button>
                           <input id="calculador" type="text" class="form-control" placeholder="" aria-label="Example text with two button addons">
-                          <button class="btn btn-outline-secondary" type="button">ARS</button>
                         </div>
                         <div class="d-flex justify-content-between mt-3">
                           <p>Cotización dólar oficial</p>
-                          <strong><p id="inputDolarOficial" >$186</p></strong>
+                          <strong><div id="inputDolarOficial" >$186</div></strong>
                         </div>
                         <hr>
                         <div class="d-flex justify-content-between">
                           <p>Sin impuestos</p>
-                          <strong><p id="inputSinImpuestos" >$0</p></strong>
+                          <strong><div id="inputSinImpuestos" >$0</div></strong>
                         </div>
                         <div class="d-flex justify-content-between">
                           <p>+ Imp. PAIS (30%)</p>
-                          <strong><p id="inputIMP-pais" >$0</p></strong>
+                          <strong><div id="inputIMP-pais" >$0</div></strong>
                         </div>
                         <div class="d-flex justify-content-between">
                           <p>+ Imp. ganancias (45%)</p>
-                            <strong><p id="inputIMP-ganancia" >$0</p></strong>
+                            <strong><div id="inputIMP-ganancia" >$0</div></strong>
                           </div>
                           <hr>
                         <div class="d-flex justify-content-between">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <input class="form-check-input" type="checkbox" value="" id="flexCheck">
                           <label class="form-check-label" for="flexCheckDefault">
                             + Imp. Dólar Qatar (25%)
                           </label>
-                          <strong><p id="inputQatar" >0</p></strong>
+                          <strong><div id="inputQatar" >0</div></strong>
                         </div>
                         <hr>
                         <div class="d-flex justify-content-evenly mb-2 ">
                           <p>Total c/ imp.</p>
-                          <strong><p>$186</p></strong>
+                          <strong><div id="totalCimp" >$0</div></strong>
                         </div>
-                        <button class="btn btn-dark" type="button">Calcular</button>
                       </div>
                     </div>
                   <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
@@ -98,7 +95,7 @@
                       <div id="container">
                         <button type="button" id="btn-historial" class="btn rrr mb-3" >VER HISTORIAL (IVA)</button>
                       </div>
-                    <div class="container"  id="1-r">
+                    <div class="container"  id="historial-btn">
                   </div>
                 </div>
           </form>
