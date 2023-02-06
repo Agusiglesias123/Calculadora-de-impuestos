@@ -26,198 +26,35 @@ function ordenarMayormenor(array){
 }
 
 
-// Clase constructora
-
-class productos {
-    constructor(id, producto, precio, precioIVA){
-        this.id = id,
-        this.producto = producto,
-        this.precio = precio,
-        this.precioIVA = precioIVA
-    }
-}
-
-const productos1= new productos(1,"Arroz",200, 242)
-
-const productos2 = new productos(2,"Atun",700, 847)
-
-const productos3 = new productos(3,"fideos", 500, 605)
-
-const productos4= new productos(4,"papa", 150, 181)
+ 
 
 
-const estanteria = [productos1, productos2, productos3, productos4]
-
-
-// funciones del menu
-
-function calcularImpuestoUSD(){
-    let continuar;
-    do{
-        let valor = parseInt(prompt("Ingrese el valor a calcular"))
-        while(isNaN(valor)){
-            valor = parseInt(prompt("ATENCION TIPO DE DATO INCORRECTO, Ingrese el valor a calcular"))
-         }
-         multi(valorDolar, valor)
-         let sImpuestos = multi(valorDolar, valor);
-         multi(sImpuestos, tax)
-         let cImpuestos = multi(sImpuestos, tax);
-         let totalCimp = suma(cImpuestos, sImpuestos);
-         alert(`El valor total con impuestos es ${totalCimp}`)
-        continuar = prompt("¿Desea calcular nuevamente el impuesto? (si/no)");
-    }while(continuar === 'si');
-}
-
-function calcularImpuestoUSDQatar(){
-    let continuar;
-    do {
-        let valor = parseInt(prompt("Ingrese el valor a calcular"))
-        while(isNaN(valor)){
-            valor = parseInt(prompt("ATENCION TIPO DE DATO INCORRECTO, Ingrese el valor a calcular"))
-         }
-         multi(valorDolar, valor)
-         let sImpuestos = multi(valorDolar, valor);
-         multi(sImpuestos, tax)
-         let cImpuestos = multi(sImpuestos, taxQatar);
-         let totalCimpQatar = suma(cImpuestos, sImpuestos);
-         alert(`El valor total con impuestos Qatar es ${totalCimpQatar}`)
-        continuar = prompt("¿Desea calcular nuevamente el impuesto? (si/no)");
-    } while (continuar === 'si');
-}
-
-function calcularImpuestoARS(){
-    let continuar;
-    do {
-        let valor = parseInt(prompt("Ingrese el valor a calcular"))
-        while(isNaN(valor)){
-            valor = parseInt(prompt("ATENCION TIPO DE DATO INCORRECTO, Ingrese el valor a calcular"))
-         }
-         let cImpuestos = multi(valor, tax);
-         let totalCimp = suma(cImpuestos, valor);
-         alert(`El valor total con impuestos es ${totalCimp}`)
-        continuar = prompt("¿Desea calcular nuevamente el impuesto? (si/no)");
-    } while (continuar === 'si');
-}
-
-function calcularImpuestoARSQatar(){
-    let continuar;
-    do {
-        let valor = parseInt(prompt("Ingrese el valor a calcular"))
-        while(isNaN(valor)){
-            valor = parseInt(prompt("ATENCION TIPO DE DATO INCORRECTO, Ingrese el valor a calcular"))
-         }
-         let cImpuestos = multi(valor, taxQatar);
-         let totalCimpQatar = suma(cImpuestos, valor);
-         alert(`El valor total con impuestos es ${totalCimpQatar}`)
-        continuar = prompt("¿Desea calcular nuevamente el impuesto? (si/no)");
-    } while (continuar === 'si');
-}
-
-
-function agregarProducto() {
-    let productosCIVA = [estanteria];
-    let continuar;
-    do {
-        let Producto = prompt("Ingrese el nombre del producto:");
-        let Precio = parseFloat(prompt("Ingrese el precio del producto:"));
-        while(isNaN(Precio)){
-            Precio = parseInt(prompt("ATENCION TIPO DE DATO INCORRECTO, Ingrese el valor del producto"))
-         }
-        let IVA = Precio * 1.21;
-        const ProductoNuevo = new productos(estanteria.length+1, Producto, Precio, IVA)
-        estanteria.push(ProductoNuevo) 
-        continuar = prompt("¿Desea calcular el IVA de otro producto? (si/no)").toLowerCase();
-    } while (continuar === 'si');
-    console.log(productosCIVA)
-}
-
-function verHistorial(array){
-    console.log("Bienvenido! su historial es:")
-    array.forEach((productos)=>{
-        console.log(productos.id, productos.producto, productos.precio, productos.precioIVA)
-    })
-}
-
-function ordenarHistorial(array) {
-    let opcion = parseInt(prompt (`
-    1 - Ordenar de menor a mayor
-    2 - Ordenar de mayor a menor
-    `))
-    switch (opcion) {
-        case 1:
-            ordenarMenormayor(array)
-        break;
-        case 2:
-            ordenarMayormenor(array)
-        break;
-        default:
-            console.log("Ingrese una opción correcta")
-        break;
-    }
-}
-
-
-// let salirMenu = false
-// do{
-//     let opciones = parseInt(prompt(`Ingrese la opción deseada
-//        1 - Calcular impuestos (USD)
-//        2 - Calcular impuestos + impuesto Qatar (USD)
-//        3 - Calcular impuestos (ARS)
-//        4 - Calcular impuestos + impuesto Qatar (ARS)
-//        5 - Calcular IVA
-//        6 - Ver historial (IVA)
-//        7 - ordenar historial (IVA)
-//        0 - Salir del menu`))
-//     switch(opciones){
-//         case 1:
-//             calcularImpuestoUSD()
-//         break
-//         case 2:
-//             calcularImpuestoUSDQatar()
-//         break
-//         case 3:
-//             calcularImpuestoARS()
-//         break
-//         case 4:
-//             calcularImpuestoARSQatar()
-//         break
-//         case 5:
-//             agregarProducto() 
-//         break
-//         case 6:
-//             verHistorial(estanteria)
-//         break
-//         case 7:
-//             ordenarHistorial(estanteria)
-//         break
-//         case 0:
-//             alert("gracias por utilizar nuestra app")
-//             salirMenu = true
-//         break
-//         default:
-//             console.log("Ingrese una opción correcta")
-//         break
-//     }
-// }while(!salirMenu)`
+// Ver y ocultar el catologo
 
 let historialProductos = document.getElementById("historial-btn") 
 let VERhistorialProductos = document.getElementById("btn-historial") 
-let historialdoble = document.getElementById("historial-btn")
-let inputProducto = document.getElementById("nombreProducto")
-let inputPrecio = document.getElementById("nombrePrecio")
-let botonAgregarIVA = document.getElementById("btn-agregarProducto")
-botonAgregarIVA.addEventListener("click", () => {cargarProducto(estanteria)})
-
 
 
 VERhistorialProductos.onclick = () =>{
-    verHistorial(estanteria)
+    VerOcultarElhistorial()
 }
 
 historialProductos.onclick = () =>{
     verHistorial(estanteria)
 }
 
+function VerOcultarElhistorial(array){
+    if (estanteria) {
+       VERhistorialProductos.addEventListener("click", function (){
+           verHistorial(estanteria)
+       })
+   }
+    if (estanteria) {
+        VERhistorialProductos.addEventListener("dblclick", function (){     
+            historialProductos.innerHTML = ""
+        })
+    }
+}
 
 
 function verHistorial(array){
@@ -227,17 +64,24 @@ function verHistorial(array){
         nuevoProducto.classList.add("my-2")
         nuevoProducto.innerHTML = `
         <ul class="list-group list-group-horizontal" id="${productos.id}">
-        <li class="list-group-item">${productos.id}</li>
-        <li class="list-group-item">${productos.producto}</li>
-        <li class="list-group-item">${productos.precio}</li>
-        <li class="list-group-item">${productos.precioIVA}</li>
+        <li class="list-group-item node-bg">${productos.id}</li>
+        <li class="list-group-item node-bg">${productos.producto}</li>
+        <li class="list-group-item node-bg">S/IVA $${productos.precio}</li>
+        <li class="list-group-item node-bg">C/IVA $${productos.precioIVA}</li>
       </ul>
         `
         historialProductos.appendChild(nuevoProducto)
     }
 }
 
+// agregar productos
 
+let botonAgregarIVA = document.getElementById("btn-agregarProducto")
+botonAgregarIVA.addEventListener("click", () => {cargarProducto(estanteria)})
+
+
+let inputProducto = document.getElementById("nombreProducto")
+let inputPrecio = document.getElementById("nombrePrecio")
 
 function cargarProducto(array) {
     let inputProducto = document.getElementById("nombreProducto");
@@ -245,33 +89,32 @@ function cargarProducto(array) {
     let IVA = inputPrecio.value * 1.21;
     const ProductoNuevo = new productos(array.length+1, inputProducto.value, inputPrecio.value, IVA)
     array.push(ProductoNuevo) 
-    verHistorial(array)
+    // verHistorial(array)
     inputProducto.value = ""
     inputPrecio.value = ""
+    localStorage.setItem("estanteria", JSON.stringify(array))
 }
-calculador
 
 
 
 let inputDolarOficial = document.getElementById("inputDolarOficial");
-
 let inputSinImpuestos = document.getElementById("inputSinImpuestos");
-
 let inputIMPpais = document.getElementById("inputIMP-pais");
-
 let inputIMPganancia = document.getElementById("inputIMP-ganancia");
-
 let inputQatar = document.getElementById("inputQatar");
-
-inputDolarOficial.innerHTML = `$${valorDolar}`
-
+let checkbox = document.getElementById("flexCheck")
+let btnTotal = document.getElementById("totalCimp")
 let inputCalculo = document.getElementById("calculador");
 
 
 
-let btnTotal = document.getElementById("totalCimp")
+// valor dolar estatico
+inputDolarOficial.innerHTML = `$${valorDolar}`
 
+// calculo total de impuestos
+inputDolarOficial.innerHTML = `$${valorDolar}`
 inputCalculo.addEventListener("input",function(){
+    
     multi(valorDolar, inputCalculo.value)
     let sinImpuestos = multi(valorDolar, inputCalculo.value);
     inputSinImpuestos.innerHTML = `$${sinImpuestos}`
@@ -286,16 +129,41 @@ inputCalculo.addEventListener("input",function(){
     multi(sinImpuestos, impGanancias);
     let cGananImp = multi(sinImpuestos, impGanancias).toFixed();
     inputIMPganancia.innerHTML =`$${cGananImp}`
+    checkbox.addEventListener("change", function(){
+        if (checkbox.checked) {
+            let soloQatar = multi (sinImpuestos, impQatar).toFixed()
+            inputQatar.innerHTML = `$${soloQatar}`
+            let cImpuestos = multi(sinImpuestos, taxQatar);
+            let totalCimpQatar = suma(cImpuestos, sinImpuestos);
+            btnTotal.innerHTML = `$${totalCimpQatar}`
+        } else {
+            inputQatar.innerHTML = `$0`
+            btnTotal.innerHTML = `$${totalCimpp}`
+        }
+    })
+})
+
+// ordenar historial
+
+let mayorMenor = document.getElementById("mayorMenor")
+let menorMayor = document.getElementById("menorMayor")
+
+mayorMenor.onclick = function(){
+    ordenarMayormenor(estanteria)
+}
+menorMayor.onclick = function(){
+    ordenarMenormayor(estanteria)
+}
+
+let buscador = document.getElementById("buscador")
+buscador.addEventListener("input", ()=>{
+    buscarInfo(buscador.value, estanteria)
 })
 
 
-// let checkbox = document.getElementById("flexCheck")
-
-// checkbox.addEventListener("change", function(){
-//     if (checkbox.checked) {
-//         console.log("chekeado")
-//     } else {
-//         console.log("sss")
-//     }
-// })
-
+function buscarInfo (buscado, array){
+    let busquedaArray = array.filter(
+        (productos) => productos.producto.toLowerCase().includes(buscado.toLowerCase()) 
+    )
+    verHistorial(busquedaArray)
+}
