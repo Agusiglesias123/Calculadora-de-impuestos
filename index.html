@@ -84,9 +84,8 @@
                         </div>
                       </div>
                       <div class="container mt-2">
-                        <button type="button" id="btn-agregarProducto" class="btn-calculo" type="button">Calcular</button>
+                        <button type="button" id="btn-agregarProducto" class="btn-calculo" type="button">CALCULAR</button>
                       </div>
-                      
                   </div>
                   </div>
                   <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
@@ -96,14 +95,14 @@
                         <h1 class="mb-3">BRAVE</h1>
                       </div>
                       <div id="container">
-                        <button type="button" id="btn-historial" class="btn rrr mb-3" >VER HISTORIAL (IVA)</button>
+                        <button type="button" id="btn-historial" class="btn rrr mb-3 btn-calculo" >VER HISTORIAL</button>
                       </div>
                       
                       <div class="dropdown container d-flex">
                         <form class="d-flex" role="search">
                           <input id="buscador" class="form-control me-2" type="search" placeholder="Busqueda por producto" aria-label="Search">
                           <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ordenar de
+                            ORDENAR DE
                           </button>
                         </form>
                         <ul class="dropdown-menu">
@@ -111,14 +110,18 @@
                           <li><button id="menorMayor" class="dropdown-item" type="button">Menor a mayor</button></li>
                         </ul>
                       </div>
-                      
+                      <div class="mt-4" id="coincidencia" ></div>
+                      <div class="container node-bg"  id="historial-btn"></div>
+                      </div>
                     <div class="container node-bg"  id="historial-btn">
                   </div>
                 </div>
           </form>
+          
         </main>        
     </body>
 <script src="./js/script.js"></script>
 <script src="./js/class.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </html>

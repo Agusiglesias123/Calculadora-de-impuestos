@@ -56,12 +56,16 @@ body {
     color :#127369;
     border: none;
   }
+
+  
+  
+
   .node-bg{
     background-color: #8AA6A3;
     border-color: #127369;
     color: black;
-  }
 
+  }
   .form-check-input:checked{
     background-color: #127369;
     border: none;
@@ -70,21 +74,20 @@ body {
 
   .btn-calculo {
     font-size: 17px;
-    color: #e1e1e1;
-    font-family: inherit;
-    font-weight: 800;
+    color: #000000;
+    font-weight: 500;
     cursor: pointer;
     position: relative;
     box-shadow: none;
     border: none;
     background: none;
-    text-transform: uppercase;
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: color;
   }
+
   
-  .btn-calculo:focus,
+  .btn-calculo:focus, 
   .btn-calculo:hover {
     color: #127369;
   }

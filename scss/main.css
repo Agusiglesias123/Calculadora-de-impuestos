@@ -118,16 +118,14 @@ body {
 
 .btn-calculo {
   font-size: 17px;
-  color: #e1e1e1;
-  font-family: inherit;
-  font-weight: 800;
+  color: #000000;
+  font-weight: 500;
   cursor: pointer;
   position: relative;
   -webkit-box-shadow: none;
           box-shadow: none;
   border: none;
   background: none;
-  text-transform: uppercase;
   -webkit-transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
           transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   -webkit-transition-duration: 400ms;
